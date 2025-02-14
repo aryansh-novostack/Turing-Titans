@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Container, Typography, Button, TextField, Box } from "@mui/material";
 import styles from "./index.module.scss";
+import { useNavigate } from 'react-router-dom';
 
 export const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -64,9 +66,9 @@ export const Signup = () => {
       if (response.status === 200) {
         console.log("Signup Successful");
         setErrorMessage("Signup Successful");
-        // Add a small delay before redirect
+        // Navigate to index page
         setTimeout(() => {
-          window.location.href = "https://www.google.com";
+          navigate('/');
         }, 1000);
       } else {
         const data = await response.json();
@@ -79,6 +81,11 @@ export const Signup = () => {
       setLoading(false);
     }
   };
+
+  const handleloginClick = () => {
+    navigate('/');
+  };
+
 
   return (
     <Container className={styles.container}>
@@ -140,6 +147,19 @@ export const Signup = () => {
               disabled={loading}
             >
               {loading ? 'Signing up...' : 'Sign Up'}
+            </button>
+          </div>
+          <div className={styles.old}>
+            <p className="old-user">Already have an account?</p>
+          </div>
+          <div className={styles.new}>
+            <button 
+              onClick={handleloginClick}
+              type="button"
+              className={styles["btn-primaryLogin"]}
+              disabled={loading}
+            >
+              Login
             </button>
           </div>
         </form>
