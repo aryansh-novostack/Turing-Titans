@@ -34,11 +34,12 @@
   
   .form-control {
     width: 100%;
-    padding: 12px;
+    padding: 12px; /* Equal padding on all sides */
     border: 1px solid #ced4da;
     border-radius: 5px;
     margin-bottom: 1.5rem;
     display: block;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
   }
   
   .form-control::placeholder {
@@ -99,6 +100,44 @@
     margin-top: 10px;
 }
 
+/* Media Query for mobile responsiveness */
 
-/* Adjusted button width */
+@media (max-width: 768px) {
+    .login-card {
+      max-width: 100%;
+      padding: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .form-control {
+      padding: 10px;
+    }
+  
+    .btn-primary, .btn-secondary {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-card {
+      padding: 1rem;
+    }
+  
+    h2 {
+      font-size: 1.25rem;
+    }
+  
+    .form-control {
+      padding: 8px;
+    }
+  
+    .btn-primary, .btn-secondary {
+      font-size: 0.85rem;
+      padding: 8px;
+    }
+  }
 
