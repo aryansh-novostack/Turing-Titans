@@ -78,7 +78,7 @@ const LoginW = () => {
               />
             </div>
             {errorMessage && (
-              <div className="alert alert-danger" role="alert">
+              <div className="new-user" role="alert">
                 {errorMessage}
               </div>
             )}
