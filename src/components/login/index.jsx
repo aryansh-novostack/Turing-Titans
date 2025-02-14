@@ -1,10 +1,9 @@
-
 import React from "react";
 import "./login.css";
 
 const Login = () => {
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
+    <div className="container d-flex justify-content-center align-items-center">
       <div className="card p-4 shadow-lg login-card">
         <h2 className="text-center mb-4">Login</h2>
         <form>
@@ -18,6 +17,10 @@ const Login = () => {
           </div>
           <button type="submit" className="btn btn-primary w-100">Login</button>
         </form>
+        <div className="new">
+        <p className="new-user">New User?</p>
+        <button className="btn btn-secondary w-100">Sign Up</button>
+        </div>
       </div>
     </div>
   );
