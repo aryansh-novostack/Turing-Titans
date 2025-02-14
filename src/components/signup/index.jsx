@@ -119,6 +119,11 @@ export const Signup = () => {
               style={{ color: "#000" }}
               required
             />
+            {passwordError && (
+              <div className={styles["text-danger"]}>
+                ! Passwords are not matching
+              </div>
+            )}
           </div>
           <div className="mb-3">
             <label className={styles["form-label"]}>Confirm Password</label>
@@ -133,11 +138,6 @@ export const Signup = () => {
               placeholder="Enter password"
               required
             />
-            {passwordError && (
-              <div className={styles["text-danger"]}>
-                ! Passwords are not matching
-              </div>
-            )}
           </div>
           <div className={styles.new}>
             <button 
